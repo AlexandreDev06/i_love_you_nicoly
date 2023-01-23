@@ -12,4 +12,33 @@
  *
  *= require_tree .
  *= require_self
- */
+*/
+
+@import "bootstrap/scss/bootstrap";
+@font-face {
+  font-family: 'Alagard';
+  src: url('fonts/alagard.ttf');
+}
+
+body {
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+  a,
+  label,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #fff;
+    font-family: 'Alagard', sans-serif;
+  }
+}
+
+// Cabeçalho da página
+.topbar {
+  padding: 15px 20px 15px 20px;
+}
