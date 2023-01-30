@@ -15,14 +15,9 @@
 */
 
 @import "bootstrap/scss/bootstrap";
-@font-face {
-  font-family: 'Alagard';
-  src: url('fonts/alagard.ttf');
-}
-
 body {
   overflow: hidden;
-  background-color: #000;
+  background-color: #000 !important;
   color: #fff;
   a,
   label,
@@ -34,11 +29,19 @@ body {
   h5,
   h6 {
     color: #fff;
-    font-family: 'Alagard', sans-serif;
   }
 }
 
 // Cabeçalho da página
 .topbar {
   padding: 15px 20px 15px 20px;
+}
+
+// Start page
+.start-button {
+  margin-top: 15rem !important;
+}
+
+#progress-bar {
+  transition: 1s linear fade;
 }
