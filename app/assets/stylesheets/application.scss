@@ -15,6 +15,7 @@
 */
 
 @import "bootstrap/scss/bootstrap";
+@import "toastify-js/src/toastify.css";
 body {
   overflow: hidden;
   background-color: #000 !important;
@@ -44,4 +45,17 @@ body {
 
 #progress-bar {
   transition: 1s linear fade;
+}
+
+// Toastify
+.toasty {
+  text-align: center;
+}
+
+.correct_toasty {
+  background: #25D366 !important;
+}
+
+.wrong_toasty  {
+  background: #E50914 !important;
 }
