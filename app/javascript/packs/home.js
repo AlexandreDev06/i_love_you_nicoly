@@ -1,24 +1,33 @@
 import Toastify from 'toastify-js'
 
-$(document).ready(function() {
+$(function() {
   $('.button-next').each(function() {
     $(this).on('click', function() {
       next_div($(this).attr('id'));
     });
   });
+  $('.joke_with_rat').hover(function() {
+    console.log('hover')
+    $(this).text('AMA SIM 😡')
+  });
+  $('.rosa').hover(function() {
+    $(this).text('Rosa 🏳️‍🌈?')
+  });
+  $('.hate_careca').hover(function() {
+    $(this).text('VAI AMAR SIM 😡')
+  });
 });
 
 function next_div(id) {
-  var sizes_of_progress = { question_0: 0, question_1: 50 }
+  var sizes_of_progress = { question_0: 0, question_1: 10, question_2: 20, question_3: 30, question_4: 40, question_5: 50, question_6: 60, question_7: 70, question_8: 80, question_9: 90, }
 
   var current_score = $('#score_label').text()
   var button_score = $('#' + id).attr('data-points')
   var next_question_id = $('#' + id).parent().attr('data-next-question')
-  console.log(next_question_id)
-  console.log($('#question_' + next_question_id))
+  var current_id = parseInt(next_question_id) - 1
 
   // next question
-  $('#question_' + (parseInt(next_question_id) - 1)).fadeOut('visually-hidden-focusable');
+  $('#question_' + current_id).fadeOut('visually-hidden-focusable');
   setTimeout(() => {
     $('#question_' + next_question_id).fadeIn('visually-hidden-focusable');
   }, 1000);
@@ -30,7 +39,7 @@ function next_div(id) {
   }
 
   // increment progress bar
-  $('#progress-bar').val(sizes_of_progress['question_' + id])
+  $('#progress-bar').val(sizes_of_progress['question_' + current_id])
 
   // show toastify if necessary
   if ($('#' + id).hasClass('correct')) {
