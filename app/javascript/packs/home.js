@@ -19,12 +19,34 @@ $(function() {
 });
 
 function next_div(id) {
-  var sizes_of_progress = { question_0: 0, question_1: 10, question_2: 20, question_3: 30, question_4: 40, question_5: 50, question_6: 60, question_7: 70, question_8: 80, question_9: 90, }
+  var sizes_of_progress = {
+    question_0: 0,
+    question_1: 6,
+    question_2: 12,
+    question_3: 18,
+    question_4: 24,
+    question_5: 30,
+    question_6: 36,
+    question_7: 42,
+    question_8: 48,
+    question_9: 54,
+    question_10: 60,
+    question_11: 66,
+    question_12: 72,
+    question_13: 78,
+    question_14: 84,
+    question_15: 90,
+    question_16: 100
+  }
+
+  console.log(id)
+  
 
   var current_score = $('#score_label').text()
   var button_score = $('#' + id).attr('data-points')
   var next_question_id = $('#' + id).parent().attr('data-next-question')
   var current_id = parseInt(next_question_id) - 1
+  console.log(next_question_id)
 
   // next question
   $('#question_' + current_id).fadeOut('visually-hidden-focusable');
@@ -62,7 +84,7 @@ function toastify(answer) {
       className: "toasty correct_toasty",
       duration: 3000
     }).showToast();
-  } else if (answer == 'error'){
+  } else if (answer == 'error') {
     Toastify({
       text: "Errou :(",
       className: "toasty wrong_toasty",
